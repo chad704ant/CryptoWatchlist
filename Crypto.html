@@ -1,0 +1,115 @@
+﻿<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="Crypto.css" />
+    <script src="Crypto.js"></script>
+    <title>Crypto Watchlist</title>
+</head>
+<body>
+
+    <header>
+        <h1>Crypto Watchlist</h1>
+    </header>
+
+    <main>DESCRIBE WHAT I AM DOING HERE (will complete later)</main>
+
+    <div class="table-container">
+        <div class="crypto-section">
+            <table>
+                <tr>
+                    <th id="memeCoinFont">PUDGY PENGUINS<br />($PENGU)</th>
+                    <th id="memeCoinFont" class="largerFont">SOL</th>
+                    <th id="memeCoinFont" class="largerFont">MEME COIN</th>
+                    <th>
+                        <div id="penguVolumeSection">
+                            24h VOL: <p id="volumePengu"></p>
+                            <div class="popupHide">
+                                <table id="penguTable">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Volume (% change)</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p id="volChangePengu"></p>
+                            <input id="volumeInputPengu" placeholder="enter volume of past 24h" onkeypress="volValueChangePengu(event)" />
+                        </div>
+                    </th>
+                </tr>
+            </table>
+            <iframe height="100%" width="100%" id="geckoterminal-embed" title="GeckoTerminal Embed" src="https://www.geckoterminal.com/solana/pools/B4Vwozy1FGtp8SELXSXydWSzavPUGnJ77DURV2k4MhUV?embed=1&info=0&swaps=0&grayscale=0&light_chart=0" frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
+        </div>
+
+        <div class="crypto-section">
+            <table>
+                <tr>
+                    <th id="memeCoinFont">PIPPIN<br />($PIPPIN)</th>
+                    <th id="memeCoinFont" class="largerFont">SOL</th>
+                    <th id="memeCoinFont" class="largerFont">MEME COIN</th>
+                    <th>
+                        <div id="pippinVolumeSection">
+                            24h VOL: <p id="volumePippin"></p>
+                            <div class="popupHide">
+                                <table id="pippinTable">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Volume (% change)</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p id="volChangePippin"></p>
+                            <input id="volumeInputPippin" placeholder="enter volume of past 24h" />
+                        </div>
+                    </th>
+                </tr>
+            </table>
+            <iframe height="100%" width="100%" id="geckoterminal-embed" title="GeckoTerminal Embed" src="https://www.geckoterminal.com/solana/pools/8WwcNqdZjCY5Pt7AkhupAFknV2txca9sq6YBkGzLbvdt?embed=1&info=0&swaps=0&grayscale=0&light_chart=0" frameborder="0" allow="clipboard-write" allowfullscreen></iframe>
+        </div>
+
+        <div class="crypto-section">
+            <table>
+                <tr>
+                    <th>BITCOIN<br />($BTC)</th>
+                    <th>STABLECOIN</th>
+                    <th>
+                        <div id="btcMCapSection">
+                            Market Cap: <p id="mCapBTC"></p>
+                            <div class="popupHide">
+                                <table id="btcMCapTable">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>M Cap (% change)</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p id="mCapPercentChangeBTC"></p>
+                            <input id="mCapInputBTC" placeholder="enter current market cap" />
+                        </div>
+                    </th>
+                    <th>
+                        <div id="btcVolumeSection">
+                            24h VOL: <p id="volumeBTC"></p>
+                            <div class="popupHide">
+                                <table id="btcTable">
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Volume (% change)</th>
+                                    </tr>
+                                </table>
+                            </div>
+                            <p id="volChangeBTC"></p>
+                            <input id="volumeInputBTC" placeholder="enter volume of past 24h" />
+                        </div>
+                    </th>
+                </tr>
+            </table>
+            <div class="btcChart">
+                <iframe src="https://widget.coinlib.io/widget?type=chart&theme=light&coin_id=859&pref_coin_id=1505"></iframe>
+            </div>
+
+    </div>
+</div>
+
+</body>
+</html>

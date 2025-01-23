@@ -1,0 +1,4 @@
+C:\Users\chadx\OneDrive\Desktop\Development\Portfolio\Crypto\Crypto\obj\Debug\net8.0\Crypto.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\chadx\OneDrive\Desktop\Development\Portfolio\Crypto\Crypto\obj\Debug\net8.0\Crypto.AssemblyInfoInputs.cache
+C:\Users\chadx\OneDrive\Desktop\Development\Portfolio\Crypto\Crypto\obj\Debug\net8.0\Crypto.AssemblyInfo.cs
+C:\Users\chadx\OneDrive\Desktop\Development\Portfolio\Crypto\Crypto\obj\Debug\net8.0\Crypto.csproj.CoreCompileInputs.cache
