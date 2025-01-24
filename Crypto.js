@@ -101,11 +101,11 @@ document.addEventListener("DOMContentLoaded", function () {
         const date = new Date().toLocaleDateString();
         changeLog.push({ date, cap, percentageChange });
         localStorage.setItem("mCapChangeLogBTC", JSON.stringify(changeLog));
-        //updateBTCMCapChangeLogTable();
+        updateBTCMCapChangeLogTable();
         console.log(changeLog);
     }
 
-    /*function updateBTCMCapChangeLogTable() {
+    function updateBTCMCapChangeLogTable() {
         const changeLog = JSON.parse(localStorage.getItem("mCapChangeLogBTC")) || [];
         const table = document.querySelector("#btcMCapSection .popupHide table");
         table.innerHTML = `
@@ -115,7 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
         </tr>
     `;
         changeLog.forEach((log, index) => {
-            const percentageChange = log.percentageChange !== undefined ? log.percentageChange.toFixed(2) : "0.00";
+            const percentageChange = log.percentageChange !== undefined ? log.percentageChange : "0.00";
             const row = document.createElement("tr");
             row.innerHTML = `
             <td>${log.date}</td>
@@ -174,14 +174,13 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("btcMCapSection").addEventListener("mouseleave", function () {
         const popup = document.querySelector("#btcMCapSection .popupHide");
         popup.classList.remove("popupShow");
-    });*/
+    });
 
     function formatCurrency(value) {
         return "$" + value.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
     }
 
-    /*document.getElementById("mCapInputBTC").addEventListener("keypress", mCapValueChangeBTC);
-    updateBTCMCapChangeLogTable();*/
+    //updateBTCMCapChangeLogTable();
     loadSavedMCapBTC();
     document.getElementById("mCapInputBTC").addEventListener("keypress", mCapValueChangeBTC);
     //mCapValueChangeBTC();
