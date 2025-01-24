@@ -7,12 +7,12 @@
       "RelativeMoniker": "D:0:0:{E8AA5D2B-CD10-4503-A535-0086C9AB5DCA}|Crypto.csproj|solutionrelative:crypto.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E8AA5D2B-CD10-4503-A535-0086C9AB5DCA}|Crypto.csproj|c:\\users\\chadx\\onedrive\\desktop\\development\\portfolio\\crypto\\crypto\\crypto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{E8AA5D2B-CD10-4503-A535-0086C9AB5DCA}|Crypto.csproj|solutionrelative:crypto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E8AA5D2B-CD10-4503-A535-0086C9AB5DCA}|Crypto.csproj|c:\\users\\chadx\\onedrive\\desktop\\development\\portfolio\\crypto\\crypto\\crypto.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{E8AA5D2B-CD10-4503-A535-0086C9AB5DCA}|Crypto.csproj|solutionrelative:crypto.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8AA5D2B-CD10-4503-A535-0086C9AB5DCA}|Crypto.csproj|c:\\users\\chadx\\onedrive\\desktop\\development\\portfolio\\crypto\\crypto\\crypto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{E8AA5D2B-CD10-4503-A535-0086C9AB5DCA}|Crypto.csproj|solutionrelative:crypto.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E8AA5D2B-CD10-4503-A535-0086C9AB5DCA}|Crypto.csproj|c:\\users\\chadx\\onedrive\\desktop\\development\\portfolio\\crypto\\crypto\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -44,33 +44,33 @@
               "RelativeDocumentMoniker": "Crypto.js",
               "ToolTip": "C:\\Users\\chadx\\OneDrive\\Desktop\\Development\\Portfolio\\Crypto\\Crypto\\Crypto.js",
               "RelativeToolTip": "Crypto.js",
-              "ViewState": "AgIAAM8AAAAAAAAAAAAIwOUAAABpAAAAAAAAAA==",
+              "ViewState": "AgIAAIQBAAAAAAAAAAAAAI8BAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-01-11T03:19:56.017Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Crypto.css",
               "DocumentMoniker": "C:\\Users\\chadx\\OneDrive\\Desktop\\Development\\Portfolio\\Crypto\\Crypto\\Crypto.css",
               "RelativeDocumentMoniker": "Crypto.css",
               "ToolTip": "C:\\Users\\chadx\\OneDrive\\Desktop\\Development\\Portfolio\\Crypto\\Crypto\\Crypto.css",
               "RelativeToolTip": "Crypto.css",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAAwHUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAAwFkAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2025-01-11T03:19:48.746Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Crypto.html",
               "DocumentMoniker": "C:\\Users\\chadx\\OneDrive\\Desktop\\Development\\Portfolio\\Crypto\\Crypto\\Crypto.html",
               "RelativeDocumentMoniker": "Crypto.html",
               "ToolTip": "C:\\Users\\chadx\\OneDrive\\Desktop\\Development\\Portfolio\\Crypto\\Crypto\\Crypto.html",
               "RelativeToolTip": "Crypto.html",
-              "ViewState": "AgIAAE0AAAAAAAAAAAAAwG0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB8AAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2025-01-04T02:43:14.607Z",
               "EditorCaption": ""

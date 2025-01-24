@@ -2,6 +2,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Populate elements with saved data from the msot recent log entries
 
+    function loadSavedVolPengu() {
+        const changeLog = JSON.parse(localStorage.getItem("volChangeLogPengu")) || [];
+        if (changeLog.length > 0) {
+            const lastEntry = changeLog[changeLog.length - 1];
+            document.getElementById("volumePengu").innerText = formatCurrency(lastEntry.volume);
+            document.getElementById("volChangePengu").innerText = lastEntry.percentageChange.toFixed(2) + "%";
+            document.getElementById("volChangePengu").style.color = lastEntry.percentageChange < 0 ? "red" : "green";
+        } else {
+            document.getElementById("volumePengu").innerText = '';
+            document.getElementById("volChangePengu").innerText = '';
+        }
+    }
+
     function loadSavedMCapBTC() {
         const changeLog = JSON.parse(localStorage.getItem("mCapChangeLogBTC")) || [];
         if (changeLog.length > 0) {
@@ -29,6 +42,37 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Event listeners for input fields that populate elements, enters log entries & log tables as well as performs % changes calulcations using the user's <input>
+
+    function volumeChangePengu(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+
+            let volPengu = parseFloat(document.getElementById("volumeInputPengu").value);
+            const changeLog = JSON.parse(localStorage.getItem("volChangeLogPengu")) || [];
+            const lastEntry = changeLog[changeLog.length - 1];
+
+            if (isNaN(volPengu)) {
+                alert("Please enter a valid number.");
+                document.getElementById("volumeInputPengu").value = '';
+                return;
+            }
+
+            document.getElementById("volumePengu").innerText = formatCurrency(volPengu);
+            document.getElementById("volumeInputPengu").value = '';
+
+            let volPercentChange;
+            if (lastEntry === undefined) {
+                document.getElementById("volChangePengu").innerText = "No prior data";
+                volPercentChange = null; // Default value when there's no prior data
+            } else {
+                volPercentChange = ((volPengu - lastEntry.volume) / lastEntry.volume) * 100;
+                document.getElementById("volChangePengu").innerText = volPercentChange.toFixed(2) + "%";
+                document.getElementById("volChangePengu").style.color = volPercentChange < 0 ? "red" : "green";
+            }
+
+            logVolChangePengu(volPengu, volPercentChange);
+        }
+    }
 
     function mCapValueChangeBTC(event) {
         if (event.key === "Enter") {
@@ -94,6 +138,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Log's each individual user <input> into this log as a unique entry & then uodates the table that displays the log entries
 
+    function logVolChangePengu(volume, percentageChange) {
+        const changeLog = JSON.parse(localStorage.getItem("volChangeLogPengu")) || [];
+        const date = new Date().toLocaleDateString();
+        changeLog.push({ date, volume, percentageChange });
+        localStorage.setItem("volChangeLogPengu", JSON.stringify(changeLog));
+        updateChangeLogTablePengu();
+        console.log(changeLog);
+    }
+
     function logBTCmCapChange(cap, percentageChange) {
         const changeLog = JSON.parse(localStorage.getItem("mCapChangeLogBTC")) || [];
         const date = new Date().toLocaleDateString();
@@ -112,6 +165,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Updates the log display table whenever a new log entry is created
+
+    function updateChangeLogTablePengu() {
+        const changeLog = JSON.parse(localStorage.getItem("volChangeLogPengu")) || [];
+        const table = document.querySelector("#penguVolumeSection .popupHide table");
+        table.innerHTML = `
+        <tr>
+            <th>Date</th>
+            <th>Volume (% change)</th>
+        </tr>
+    `;
+        changeLog.forEach((log, index) => {
+            const percentageChange = log.percentageChange !== undefined ? log.percentageChange : "0.00";
+            const row = document.createElement("tr");
+            row.innerHTML = `
+            <td>${log.date}</td>
+            <td>${formatCurrency(log.volume)} (${percentageChange}%)</td>
+            <td><button data-index="${index}" class="pengu-delete-log-button">Delete</button></td>
+        `;
+            table.appendChild(row);
+        });
+
+        const deleteButtons = document.querySelectorAll(".pengu-delete-log-button");
+        deleteButtons.forEach(button => {
+            button.addEventListener("click", function () {
+                const index = parseInt(button.getAttribute("data-index"));
+                deleteVolLogPengu(index);
+            });
+        });
+    }
 
     function updateBTCMCapChangeLogTable() {
         const changeLog = JSON.parse(localStorage.getItem("mCapChangeLogBTC")) || [];
@@ -173,6 +255,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // A button next to each individual log entry in the log display table that allows the user to delete that specific log entry
 
+    function deleteVolLogPengu(index) {
+        const changeLog = JSON.parse(localStorage.getItem("volChangeLogPengu")) || [];
+        changeLog.splice(index, 1);
+
+        for (let i = index; i < changeLog.length; i++) {
+            if (i === 0) {
+                changeLog[i].percentageChange = undefined;
+            } else {
+                const prevVol = changeLog[i - 1].volume;
+                const currentVol = changeLog[i].volume;
+                changeLog[i].percentageChange = ((currentVol - prevVol) / prevVol) * 100;
+            }
+        }
+
+        localStorage.setItem("volChangeLogPengu", JSON.stringify(changeLog));
+        if (changeLog.length > 0) {
+            const lastEntry = changeLog[changeLog.length - 1];
+            document.getElementById("volumePengu").innerText = formatCurrency(lastEntry.volume);
+            document.getElementById("volChangePengu").innerHTML = lastEntry.percentageChange !== undefined ? `(${lastEntry.percentageChange.toFixed(2)}%)` : '';
+        } else {
+            document.getElementById("volumePengu").innerText = '';
+            document.getElementById("volChangePengu").innerText = '';
+        }
+
+        updateChangeLogTablePengu();
+    }
+
     function deleteBTCMCapLogEntry(index) {
         const changeLog = JSON.parse(localStorage.getItem("mCapChangeLogBTC")) || [];
         changeLog.splice(index, 1);
@@ -229,6 +338,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Event listeners that display the log tables when the user mouses over certain sections of the page
 
+    document.getElementById("penguVolumeSection").addEventListener("mouseenter", function () {
+        const popup = document.querySelector("#penguVolumeSection .popupHide");
+        popup.classList.add("popupShow");
+        popup.style.left = '30%';
+        popup.style.top = '75%';
+        updateChangeLogTablePengu(); // Ensure the table is updated on mouse enter
+    });
+
+    document.getElementById("penguVolumeSection").addEventListener("mouseleave", function () {
+        const popup = document.querySelector("#penguVolumeSection .popupHide");
+        popup.classList.remove("popupShow");
+    });
+
     document.getElementById("btcMCapSection").addEventListener("mouseenter", function () {
         const popup = document.querySelector("#btcMCapSection .popupHide");
         popup.classList.add("popupShow");
@@ -259,10 +381,21 @@ document.addEventListener("DOMContentLoaded", function () {
         return "$" + value.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
     }
 
+    /*function formatCurrency(value) {
+    // Handle undefined, null, or NaN values
+    if (value === undefined || value === null || isNaN(value)) {
+        value = 0; // Default value
+    }
+    // Format the number as currency
+    return "$" + value.toLocaleString("en-US", { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+}*/
+
     //updateBTCMCapChangeLogTable();
+    document.getElementById("volumeInputPengu").addEventListener("keypress", volumeChangePengu);
     document.getElementById("mCapInputBTC").addEventListener("keypress", mCapValueChangeBTC);
     document.getElementById("volumeInputBTC").addEventListener("keypress", volumeChangeBTC);
     //mCapValueChangeBTC();
     loadSavedMCapBTC();
     loadSavedVolBTC();
+    loadSavedVolPengu();
 });
