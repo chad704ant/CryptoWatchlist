@@ -26,8 +26,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -36,7 +40,7 @@
               "RelativeDocumentMoniker": "Crypto.js",
               "ToolTip": "C:\\Users\\chadx\\OneDrive\\Desktop\\Development\\Portfolio\\Crypto\\Crypto\\Crypto.js",
               "RelativeToolTip": "Crypto.js",
-              "ViewState": "AgIAAF8AAAAAAAAAAADwv3MAAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAAADAAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2025-01-11T03:19:56.017Z",
               "EditorCaption": ""
@@ -51,8 +55,7 @@
               "RelativeToolTip": "Crypto.css",
               "ViewState": "AgIAABkAAAAAAAAAAAAAwG4AAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-01-11T03:19:48.746Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-11T03:19:48.746Z"
             },
             {
               "$type": "Document",
@@ -64,8 +67,7 @@
               "RelativeToolTip": "Crypto.html",
               "ViewState": "AgIAAEcAAAAAAAAAAAAAwFUAAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-01-04T02:43:14.607Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T02:43:14.607Z"
             },
             {
               "$type": "Document",
@@ -77,8 +79,15 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-04T01:52:31.876Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-04T01:52:31.876Z"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             }
           ]
         }

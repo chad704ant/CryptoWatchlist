@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }*/
 
-    function mCapValueChangeBTC(event) {
+    /*function mCapValueChangeBTC(event) {
         if (event.key === "Enter") {
             event.preventDefault();
 
@@ -23,43 +23,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 alert("Please enter a valid number.");
                 document.getElementById("mCapInputBTC").value = '';
                 return;
-            } else {
+            }
                 document.getElementById("mCapBTC").innerText = formatCurrency(mCapBTC);
                 document.getElementById("mCapInputBTC").value = '';
-            }
-
+            
+            let mCapPercentChange;
             if (lastEntry === undefined) {
                 document.getElementById("mCapPercentChangeBTC").innerText = "No prior data";
             } else {
-                let mCapPercentChange = ((mCapBTC - lastEntry.cap) / lastEntry.cap) * 100;
+                mCapPercentChange = ((mCapBTC - lastEntry.cap) / lastEntry.cap) * 100;
                 document.getElementById("mCapPercentChangeBTC").innerText = mCapPercentChange.toFixed(2) + "%";
             }
 
-            /*const changeLog = JSON.parse(localStorage.getItem("mCapChangeLogBTC")) || [];
-            const lastEntry = changeLog[changeLog.length - 1];
-            let mostRecentSavedBTCMCap = changeLog.lastEntry;
-            let mCapPercentChangeBTC = 0;
-
-            if (!isNaN(mostRecentSavedBTCMCap)) {
-                mCapPercentChangeBTC = ((mCapBTC - mostRecentSavedBTCMCap) / mostRecentSavedBTCMCap) * 100;
-                document.getElementById("mCapPercentChangeBTC").innerText = mCapPercentChangeBTC.toFixed(2) + "%";
-                return mCapPercentCHangeBTC;
-            } else {
-                document.getElementById("mCapPercentChangeBTC").innerText = "No prior data";
-            }
-
-            if (mCapPercentChangeBTC < 0) {
-                document.getElementById("mCapPercentChangeBTC").style.color = "red";
-            } else {
-                document.getElementById("mCapPercentChangeBTC").style.color = "green";
-            }
+            //const changeLog = JSON.parse(localStorage.getItem("mCapChangeLogBTC")) || [];
+            //const lastEntry = changeLog[changeLog.length - 1];
+            
             //updateMCapChangePercentBTC(mCapPercentChangeBTC);
-            logBTCmCapChange(mCapBTC, mCapPercentChangeBTC);
-            //localStorage.setItem("mCapBTCItem", mCapBTC);*/
+            //logBTCmCapChange(mCapBTC, mCapPercentChangeBTC);
+            //localStorage.setItem("mCapBTCItem", mCapBTC);
             //mCapPercentChangeBTC(mCapBTC)
-            logBTCmCapChange(mCapBTC, mCapPercentChange);
+            //logBTCmCapChange(mCapBTC, mCapPercentChange);
         }
-    }
+    }*/
 
     function mCapValueChangeBTC(event) {
         if (event.key === "Enter") {
