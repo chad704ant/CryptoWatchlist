@@ -1,15 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    /*function loadSavedMCapBTC() {
+    function loadSavedMCapBTC() {
         const changeLog = JSON.parse(localStorage.getItem("mCapChangeLogBTC")) || [];
         if (changeLog.length > 0) {
             const lastEntry = changeLog[changeLog.length - 1];
             document.getElementById("mCapBTC").innerText = formatCurrency(lastEntry.cap);
-            updateMCapChangePercentBTC(lastEntry.percentageChange);
+            document.getElementById("mCapPercentChangeBTC").innerText = lastEntry.percentageChange.toFixed(2) + "%";
+            document.getElementById("mCapPercentChangeBTC").style.color = lastEntry.percentageChange < 0 ? "red" : "green";
         } else {
             document.getElementById("mCapBTC").innerText = '';
             document.getElementById("mCapPercentChangeBTC").innerText = '';
         }
-    }*/
+    }
 
     /*function mCapValueChangeBTC(event) {
         if (event.key === "Enter") {
@@ -180,8 +181,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     /*document.getElementById("mCapInputBTC").addEventListener("keypress", mCapValueChangeBTC);
-    loadSavedMCapBTC();
     updateBTCMCapChangeLogTable();*/
+    loadSavedMCapBTC();
     document.getElementById("mCapInputBTC").addEventListener("keypress", mCapValueChangeBTC);
     //mCapValueChangeBTC();
 });
